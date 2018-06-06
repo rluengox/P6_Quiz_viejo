@@ -1,0 +1,23 @@
+
+<h1>
+    Modo aleatorio:
+</h1>
+
+<div>
+    Respuestas correctas = <span id="score"><%= score %></span>
+</div>
+
+<p>
+    La respuesta <strong> <%= answer %> </strong> is <%= result ? 'right' : 'wrong' %>.
+</p>
+
+<p>
+    <% if (!result) { %>
+    Has fallado.
+    <a href="/quizzes"> End of Play </a>
+    <% } else { %>
+    Has acertado.
+    <a href="/quizzes/randomplay"><button>Continue playing</button></a>
+    <% } %>
+</p>
+

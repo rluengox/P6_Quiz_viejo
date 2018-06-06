@@ -1,0 +1,21 @@
+<h1>
+    Modo aleatorio:
+</h1>
+
+<div>
+    Respuestas correctas = <span id="score"><%= score %></span>
+</div>
+
+<form method="get" action="/quizzes/randomcheck/<%= quiz.id %>">
+
+    <p>
+        Preguntas: <b><%= quiz.question %></b>
+    </p>
+
+
+    <div class="wideRow">
+        <input type="text" class="itemWide" id="answer" name="answer" value="" placeholder="Answer" autocomplete="off"/>
+        <input type="submit" class="itemNarrow" id="send" value="Check">
+    </div>
+</form>
+
