@@ -1,16 +1,16 @@
 
 <h1>
-    Result:
+    Resultado:
 </h1>
 
 <p>
-    The answer <strong> <%= answer %> </strong> is <%= result ? 'Right' : 'Wrong' %>.
+    La respuesta <strong> <%= answer %> </strong> es <%= result ? 'Correcta' : 'Incorrecta' %>.
 </p>
 
 <p>
     <% if (!result) { %>
-       <a href="/quizzes/<%= quiz.id %>/play?answer=<%= answer %>"> Try it again </a>
+       <a href="/quizzes/<%= quiz.id %>/play?answer=<%= answer %>"> Inténtalo de nuevo! </a>
     <% } %>
 </p>
 
-<a href="/quizzes"><button>Go back</button></a>
+<a href="/quizzes"><button>Volver</button></a>

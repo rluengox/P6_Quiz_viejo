@@ -1,20 +1,22 @@
 const path = require('path');
 
-// Load ORM
 const Sequelize = require('sequelize');
 
-// To use SQLite data base:
-const sequelize = new Sequelize("sqlite:quiz.sqlite");
 
-// Import the definition of the Quiz Table from quiz.js
+const url = process.env.DATABASE_URL || "sqlite:quizzes.sqlite";
+
+const sequelize = new Sequelize(url);
+
+
 sequelize.import(path.join(__dirname, 'quiz'));
 
 
-// Create tables
+sequelize.import(path.join(__dirname,'sessions'));
+
 sequelize.sync()
-.then(() => console.log('Data Bases created successfully'))
+.then(() => console.log('Base de datos creada satisfactoriamente'))
 .catch(error => {
-    console.log("Error creating the data base tables:", error);
+    console.log("Error", error);
     process.exit(1);
 });
 
